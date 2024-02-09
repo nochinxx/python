@@ -6,7 +6,7 @@ import math
 def read_exercise(exercise_file):
     # Define the path to the exercise file
     exercise_file_path = os.path.join(
-        os.path.dirname(__file__), "..", "exercises", exercise_file
+        os.path.dirname(__file__), "..", "exercises","2.2", exercise_file
     )
 
     # Check if the exercise file exists
