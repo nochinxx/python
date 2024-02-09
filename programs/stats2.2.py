@@ -57,8 +57,21 @@ def main():
     print("Minimum value:", min_val)
 
     # Class width
+
     class_num = int(input("Input the number of classes: "))
-    class_width = math.ceil((max_val - min_val) / class_num)
+    if class_num == 0:
+        class_width = int(input("Input class width: "))
+    else:
+        class_width = (max_val - min_val) / class_num
+    print(class_width)
+
+    if class_num == 0:
+        class_width = class_width + 1
+        class_num=5
+    elif class_width.is_integer():
+        class_width = class_width + 1
+    else:
+        class_width = math.ceil((max_val - min_val) / class_num)
     print("Class Width:", class_width)
 
     # Compute and store the limits for each class
@@ -67,23 +80,25 @@ def main():
         lower_limit = min_val + (i * class_width) - 0.5
         upper_limit = min_val + ((i + 1) * class_width) - 0.5
         limits.append((lower_limit, upper_limit))
-    
-    #print("Limits:", limits)
-        
+
+    # print("Limits:", limits)
+
     # Count the frequency for each class
     frequencies = [0] * len(limits)
     total_data_points = len(data)
-    
+
     for value in data:
         for i, (lower, upper) in enumerate(limits):
             if lower <= value < upper:
                 frequencies[i] += 1
-    
+
     # Calculate the relative frequency for each class
     relative_frequencies = [freq / total_data_points for freq in frequencies]
 
     # Print frequency and relative frequency for each class
-    for i, ((lower, upper), freq, rel_freq) in enumerate(zip(limits, frequencies, relative_frequencies)):
+    for i, ((lower, upper), freq, rel_freq) in enumerate(
+        zip(limits, frequencies, relative_frequencies)
+    ):
         print(f"Class {i+1}: Lower Limit = {lower}, Upper Limit = {upper}")
         print(f"Frequency: {freq}")
         print(f"Relative Frequency: {rel_freq}")
