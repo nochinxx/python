@@ -66,8 +66,8 @@ def main():
     print(class_width)
 
     if class_num == 0:
-        class_width = class_width + 1
-        class_num=5
+        class_num= math.ceil((max_val - min_val) / class_width)
+        print("Class Num: ", class_num)
     elif class_width.is_integer():
         class_width = class_width + 1
     else:
