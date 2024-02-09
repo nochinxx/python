@@ -45,30 +45,50 @@ def main():
         data.append(item)
 
     # Now you can use the contents of the exercise file as needed
-    #for item in data:
+    # for item in data:
     #    print(item)
 
     # Program functionalities:
-    
+
     # Max and Min:
     max_val = max(data)
     min_val = min(data)
     print("Maximum value:", max_val)
     print("Minimum value:", min_val)
-    
+
     # Class width
     class_num = int(input("Input the number of classes: "))
     class_width = math.ceil((max_val - min_val) / class_num)
     print("Class Width:", class_width)
-    
+
     # Compute and store the limits for each class
     limits = []
-    for i in range(class_num + 1):
-        limit = min_val + (i * class_width)
-        limits.append(limit)
+    for i in range(class_num):
+        lower_limit = min_val + (i * class_width) - 0.5
+        upper_limit = min_val + ((i + 1) * class_width) - 0.5
+        limits.append((lower_limit, upper_limit))
+    
+    #print("Limits:", limits)
+        
+    # Count the frequency for each class
+    frequencies = [0] * len(limits)
+    total_data_points = len(data)
+    
+    for value in data:
+        for i, (lower, upper) in enumerate(limits):
+            if lower <= value < upper:
+                frequencies[i] += 1
+    
+    # Calculate the relative frequency for each class
+    relative_frequencies = [freq / total_data_points for freq in frequencies]
 
-    print("Limits:", limits)
-    
-    
+    # Print frequency and relative frequency for each class
+    for i, ((lower, upper), freq, rel_freq) in enumerate(zip(limits, frequencies, relative_frequencies)):
+        print(f"Class {i+1}: Lower Limit = {lower}, Upper Limit = {upper}")
+        print(f"Frequency: {freq}")
+        print(f"Relative Frequency: {rel_freq}")
+        print()
+
+
 if __name__ == "__main__":
     main()
