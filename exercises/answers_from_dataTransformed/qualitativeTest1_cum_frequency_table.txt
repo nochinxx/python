@@ -1,0 +1,5 @@
+Class           Frequency  Rel. Freq.      Cum. Freq.     
+Freshman        7          0.35            7              
+Junior          3          0.15            10             
+Senior          5          0.25            15             
+Sophomore       5          0.25            20             
