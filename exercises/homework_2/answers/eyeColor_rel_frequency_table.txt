@@ -1,0 +1,4 @@
+Class           Frequency  Rel. Freq.      Cum. Freq.     
+Blue            2          0.12            2              
+Brown           10         0.62            12             
+Green           4          0.25            16             

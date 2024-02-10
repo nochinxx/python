@@ -1,0 +1,4 @@
+Class           Frequency  Rel. Freq.
+Brown           10         62.50     %
+Blue            2          12.50     %
+Green           4          25.00     %
