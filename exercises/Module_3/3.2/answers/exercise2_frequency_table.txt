@@ -1,0 +1,5 @@
+Median: 97
+Mean: 135.13333333333333
+Range: 274
+Variance: 7503.2666666666655
+Standard Deviation: 86.62139843402821
