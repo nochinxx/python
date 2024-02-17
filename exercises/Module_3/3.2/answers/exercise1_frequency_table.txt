@@ -1,0 +1,15 @@
+Mode: 288
+Median: 268.0
+Mean: 252.6
+Mode: 288
+Median: 268.0
+Mean: 252.6
+Range: 218
+Variance: 2903.621052631579
+Standard Deviation: 53.88525821253508
+Mode: 288
+Median: 268.0
+Mean: 252.6
+Range: 218
+Variance: 2903.621052631579
+Standard Deviation: 53.88525821253508

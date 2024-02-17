@@ -1,0 +1,13 @@
+Median: 138.9
+Mean: 144.53783783783786
+Range: 337.8
+Variance: 4913.134084084086
+Standard Deviation: 70.09375210447851
+Population Variance: 4780.346676406138
+Population Standard Deviation: 69.14005117445414
+Chebyshev 75%: 
+ Lower Bound: 4.350333628880833 - Higher Bound: 284.7253420467949 at least 75%
+Chebyshev 88.9%: 
+ Lower Bound: -65.74341847559768 - Higher Bound: 354.81909415127336 at least 88.9%
+Chebyshev 93.8%: 
+ Lower Bound: -135.8371705800762 - Higher Bound: 424.9128462557519 at least 93.8%

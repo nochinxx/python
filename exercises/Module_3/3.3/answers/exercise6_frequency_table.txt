@@ -1,0 +1,8 @@
+Minimum: 48.0
+Q1: 66.0
+Median: 96.0
+Q3: 161.0
+Maximum: 322.0
+Interquartile Range (IQR): 95.0
+Low Fence: -76.5
+High Fence: 303.5
