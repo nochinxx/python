@@ -11,8 +11,7 @@ def read_exercise(exercise_file):
         os.path.dirname(__file__),
         "..",
         "exercises",
-        "Module_3",
-        "3.2",
+        "homework_3",
         exercise_file,
     )
 
@@ -125,14 +124,14 @@ def main():
 
     # Export frequency table to a text file
     output_directory = os.path.join(
-        os.path.dirname(__file__), "..", "exercises", "Module_3", "3.2", "answers"
+        os.path.dirname(__file__), "..", "exercises", "homework_3", "answers"
     )
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
 
     output_file = os.path.join(
         output_directory,
-        f"{get_exercise_name(exercise_file)}_frequency_table.txt",
+        f"{get_exercise_name(exercise_file)}_deviation_table.txt",
     )
 
     # Mode, Mean, and Median
@@ -169,9 +168,15 @@ def main():
         f.write(f"Standard Deviation: {standard_deviation}\n")
         f.write(f"Population Variance: {population_variance}\n")
         f.write(f"Population Standard Deviation: {population_standard_deviation}\n")
-        f.write(f"Chebyshev 75%: \n {calculate_chebyshev(mean, standard_deviation, 75)}\n")
-        f.write(f"Chebyshev 88.9%: \n {calculate_chebyshev(mean, standard_deviation, 88.9)}\n")
-        f.write(f"Chebyshev 93.8%: \n {calculate_chebyshev(mean, standard_deviation, 93.8)}\n")
+        f.write(
+            f"Chebyshev 75%: \n {calculate_chebyshev(mean, standard_deviation, 75)}\n"
+        )
+        f.write(
+            f"Chebyshev 88.9%: \n {calculate_chebyshev(mean, standard_deviation, 88.9)}\n"
+        )
+        f.write(
+            f"Chebyshev 93.8%: \n {calculate_chebyshev(mean, standard_deviation, 93.8)}\n"
+        )
 
     # Calculate frequencies and x positions
     frequencies = []
@@ -214,7 +219,7 @@ def main():
     plt.tight_layout()
 
     # Save plot
-    plot_file_path = os.path.join(output_directory, "plots", f"{exercise_name}.png")
+    plot_file_path = os.path.join(output_directory, "plots", f"{exercise_name}_deviation.png")
     plt.savefig(plot_file_path)
 
 

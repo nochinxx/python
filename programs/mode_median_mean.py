@@ -4,14 +4,14 @@ import sys
 import math
 import matplotlib.pyplot as plt
 
+
 def read_exercise(exercise_file):
     # Define the path to the exercise file
     exercise_file_path = os.path.join(
         os.path.dirname(__file__),
         "..",
         "exercises",
-        "Module_3",
-        "3.1",
+        "homework_3",
         exercise_file,
     )
 
@@ -33,6 +33,7 @@ def get_exercise_name(exercise_file):
     exercise_name = os.path.splitext(exercise_file)[0]
     return exercise_name
 
+
 def calculate_mode(data):
     # Calculate the mode
     frequency = {}
@@ -46,7 +47,11 @@ def calculate_median(data):
     # Calculate the median
     sorted_data = sorted(data)
     n = len(sorted_data)
-    median = (sorted_data[n // 2] if n % 2 != 0 else (sorted_data[n // 2 - 1] + sorted_data[n // 2]) / 2)
+    median = (
+        sorted_data[n // 2]
+        if n % 2 != 0
+        else (sorted_data[n // 2 - 1] + sorted_data[n // 2]) / 2
+    )
     return median
 
 
@@ -77,14 +82,14 @@ def main():
 
     # Export frequency table to a text file
     output_directory = os.path.join(
-        os.path.dirname(__file__), "..", "exercises", "Module_3", "3.1", "answers"
+        os.path.dirname(__file__), "..", "exercises", "homework_3", "answers"
     )
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
 
     output_file = os.path.join(
         output_directory,
-        f"{get_exercise_name(exercise_file)}_frequency_table.txt",
+        f"{get_exercise_name(exercise_file)}_mmm_table.txt",
     )
 
     # Mode, Mean, and Median
@@ -114,15 +119,27 @@ def main():
     plt.figure(figsize=(10, 6))
 
     # Plot data points
-    plt.plot(x_positions, frequencies, marker='o', linestyle='-')
+    plt.plot(x_positions, frequencies, marker="o", linestyle="-")
 
     # Annotate mode, median, and mean on the plot
-    plt.annotate(f'Mode: {mode}', xy=(mode, 0), xytext=(mode, max(frequencies)//2),
-                 arrowprops=dict(facecolor='black', shrink=0.05))
-    plt.annotate(f'Median: {median}', xy=(median, 0), xytext=(median, max(frequencies)//2),
-                 arrowprops=dict(facecolor='black', shrink=0.05))
-    plt.annotate(f'Mean: {mean:.2f}', xy=(mean, 0), xytext=(mean, max(frequencies)//2),
-                 arrowprops=dict(facecolor='black', shrink=0.05))
+    plt.annotate(
+        f"Mode: {mode}",
+        xy=(mode, 0),
+        xytext=(mode, max(frequencies) // 2),
+        arrowprops=dict(facecolor="black", shrink=0.05),
+    )
+    plt.annotate(
+        f"Median: {median}",
+        xy=(median, 0),
+        xytext=(median, max(frequencies) // 2),
+        arrowprops=dict(facecolor="black", shrink=0.05),
+    )
+    plt.annotate(
+        f"Mean: {mean:.2f}",
+        xy=(mean, 0),
+        xytext=(mean, max(frequencies) // 2),
+        arrowprops=dict(facecolor="black", shrink=0.05),
+    )
 
     # Labeling plot
     plt.xlabel("Values")

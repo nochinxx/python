@@ -13,7 +13,7 @@ def write_to_csv(data, header,data_file):
         "..",
         "exercises",
         "Module_3",
-        "3.2"
+        "3.3"
     )
     csv_file_name = f"{os.path.splitext(data_file)[0]}.csv"
     csv_file_path = os.path.join(directory, csv_file_name)
@@ -34,7 +34,7 @@ def main():
         "..",
         "exercises",
         "Module_3",
-        "3.2",
+        "3.3",
         data_file,
     )
     
