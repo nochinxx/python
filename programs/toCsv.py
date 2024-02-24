@@ -5,6 +5,7 @@ import sys
 def read_data_from_file(file_path):
     with open(file_path, 'r') as file:
         data = [line.strip() for line in file]
+        print(data)
     return data
 
 def write_to_csv(data, header,data_file):
@@ -12,8 +13,7 @@ def write_to_csv(data, header,data_file):
         os.path.dirname(__file__),
         "..",
         "exercises",
-        "Module_3",
-        "3.3"
+        "homework_3",
     )
     csv_file_name = f"{os.path.splitext(data_file)[0]}.csv"
     csv_file_path = os.path.join(directory, csv_file_name)
@@ -33,8 +33,7 @@ def main():
         os.path.dirname(__file__),
         "..",
         "exercises",
-        "Module_3",
-        "3.3",
+        "homework_3",
         data_file,
     )
     
