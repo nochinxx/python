@@ -9,8 +9,7 @@ def read_exercise(exercise_file):
     exercise_file_path = os.path.join(
         os.path.dirname(__file__),
         "..",
-        "exercises",
-        "dataTransformed",
+        "test",
         exercise_file,
     )
 
@@ -87,7 +86,7 @@ def main():
 
     # Export frequency table to a text file
     output_directory = os.path.join(
-        os.path.dirname(__file__), "..", "exercises", "answers_from_dataTransformed"
+        os.path.dirname(__file__), "..", "test", "answers"
     )
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)

@@ -4,8 +4,10 @@ import sys
 
 def read_data_from_file(file_path):
     with open(file_path, 'r') as file:
-        data = [line.strip() for line in file]
-        print(data)
+        data = [line.strip().split('\t') for line in file]
+        # Print the data to verify
+        # for row in data:
+        #     print(row)
     return data
 
 def write_to_csv(data, header,data_file):
@@ -13,13 +15,14 @@ def write_to_csv(data, header,data_file):
         os.path.dirname(__file__),
         "..",
         "exercises",
-        "homework_3",
+        "probabilities",
     )
     csv_file_name = f"{os.path.splitext(data_file)[0]}.csv"
     csv_file_path = os.path.join(directory, csv_file_name)
     with open(csv_file_path, mode="w", newline="") as file:
         writer = csv.writer(file)
-        writer.writerow([header])
+        if (header != ""):
+            writer.writerow([header])
         writer.writerows(map(lambda x: [x], data))
 
 def main():
@@ -33,7 +36,7 @@ def main():
         os.path.dirname(__file__),
         "..",
         "exercises",
-        "homework_3",
+        "probabilities",
         data_file,
     )
     
