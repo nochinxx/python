@@ -6,8 +6,8 @@ def read_data_from_file(file_path):
     with open(file_path, 'r') as file:
         data = [line.strip().split('\t') for line in file]
         # Print the data to verify
-        # for row in data:
-        #     print(row)
+        for row in data:
+             print(row)
     return data
 
 def write_to_csv(data, header,data_file):

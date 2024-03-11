@@ -25,7 +25,11 @@ def read_data(filename):
     probabilities = []
     reader = read_data_from_file(exercise_file_path)
     for row in reader:
-        if (row[0]=="Days"):
+        try:
+            # If it fails, try converting to float
+            float(row[0])
+        except ValueError:
+            # If both fail, skip this row
             continue
         days.append(int(row[0]))
         probabilities.append(float(row[1]))
