@@ -27,7 +27,7 @@ def calculate_sampling_distribution(n):
 
 # input data
 mu = float(input("Input the mean: "))  # Mean
-sigma = float(input("Input the stamdard deviation: "))  # Standard deviation
+sigma = float(input("Input the standard deviation: "))  # Standard deviation
 
 
 def main():
@@ -42,7 +42,7 @@ def main():
         mean, std_dev = calculate_sampling_distribution(n)
 
         # Print results
-        print(f"For a sample of size {n}:")
+        print(f"\nFor a sample of size {n}:")
         print(f"Mean of the sampling distribution of the sample mean: {mean}")
         print(f"Standard deviation of the sampling distribution of the sample mean: {std_dev:.2f}\n")
         
